@@ -6,24 +6,49 @@ la div #count avec le compte total !
 
 Bonus
 
-Tous les 20 click, demandez à l'utilisateur de trouver une activité plus productive via un alert
+Tous les 20 click, demandez à l'utilisateur de trouver une activité 
+plus productive via un alert
 Un message différent tous les 20 clicks
 Un message aléatoire parmi une liste de messages */
 
-$(document).ready(function(){
+/* MON OPTION PREMIERE : mais pbm lors car message d'alert à 0 au lieu d'avoir le premier message d'alerte à 20 */
+
+/*$(document).ready(function(){
 	
+
+
 	$("img").click(function(){
 
-	ajout = parseInt($(".counter").text());
+	var ajout = parseInt($(".counter").text());
 	$(".counter").text(ajout+1);
+	console.log(ajout);
+
+	if (ajout % 20 === 0){
+		alert('Trouve une activité plus productive !')
+	}
+
 
 	});
 
+});*/
 
-	// var cookieClicker = 0;
 
-	// $("button").click(function(){
-	// 	cookieClicker ++;
 
-	// });
+/*OPTION 2 : sans bug à 0 pr le message d'alerte*/
+
+$(document).ready(function(){
+	
+	var ajout = 0;
+	$("img").click(function(){
+		ajout++;
+		$(".counter").text(ajout);
+		console.log(ajout);
+
+		if (ajout % 20 === 0){
+			alert('Trouve une activité plus productive !')
+		}
+
+
+	});
+
 });
