@@ -36,19 +36,31 @@ Un message aléatoire parmi une liste de messages */
 
 /*OPTION 2 : sans bug à 0 pr le message d'alerte*/
 
+
+
+
 $(document).ready(function(){
 	
 	var ajout = 0;
+	var tableau = ['click encore', 'allez encore une fois', 'tu peux mieux faire', 'courage'];
+	var len = tableau.length;
+
+
 	$("img").click(function(){
 		ajout++;
 		$(".counter").text(ajout);
 		console.log(ajout);
 
-		if (ajout % 20 === 0){
-			alert('Trouve une activité plus productive !')
-		}
+// Tous les 20 click, demandez à l'utilisateur de trouver une activité 
+// plus productive via un alert
 
+	if (ajout % 20 === 0){
+	// alert('Trouve une activité plus productive !')
+	// }
 
-	});
+// 2 derniers bonus 
 
+	alert(tableau[Math.floor(Math.random() * len)]);
+}
+});
 });
